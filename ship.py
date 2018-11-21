@@ -5,15 +5,15 @@ import bullet as b
 def ship_move(x,y,left,right,up,down):
 	#Change coordinates as necessary
 	#check if outside boundary
-	if left:
+	if left and 50 < x: ###ship left boundary
 		x-=5
-	elif right:
+	elif right and x < 550:	###ship right boundary
 		x+=5
-	if up:
+	if up and y < 750:	###ship upper boundary
 		y+=5
-	elif down:
+	elif down and 200 < y:	###ship lower boundary
 		y-=5
-	return [x,y]
+	return [x,y]		###just edit them dimensions to your likings
 
 def ship_gun(x,y,modifiers):
 	#modifiers = stats
